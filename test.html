@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <meta name="viewport"
+        content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <style>
+        .aaa {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="box">
+        盒子啊
+    </div>
+
+    <div class="aaa">
+        aaaaaaaa
+        <button type="button" id="btn" disabled="disabled">Click Me!</button>
+        <span id="num">10</span>
+    </div>
+    <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+    <script>
+        $('.box').click(function () {
+            $('.aaa').toggle();
+            timeEnd();
+        })
+        var x = 10;
+        function timeEnd() {
+            var timer = setInterval(function () {
+                x = x - 1;
+                if (x < 1) {
+                    clearInterval(timer)
+                    $('#btn').removeAttr("disabled");
+                }
+                $('#num').html(x);
+            }, 1000)
+        }
+       
+
+
+
+    </script>
+</body>
+
+</html>
