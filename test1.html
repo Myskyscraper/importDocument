@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <meta name="viewport"
+        content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+</head>
+
+<body>
+    <div>
+        <p onclick="fdou()">函数防抖 在频繁触动时间内，有足够空闲时间 公交车</p>
+        <p onclick="show()">函数节流 在一定时间内，函数只跑一次 眨眼</p>
+    </div>
+    <script>
+        //节流
+        var canRun = true;
+
+        function show(){
+            console.log(0);
+            if (!canRun) {
+                //判断是否是空闲，如果在执行中直接返回；
+                console.log('程序还在执行，你点击也没用');
+                return
+            }
+            canRun = false;
+            setTimeout(function () {
+                console.log('函数正在执行')
+                canRun = true;
+            }, 5000)
+            console.log(2);
+        }
+
+        
+        //防抖
+        var timer = false;
+        function fdou(){
+            clearTimeout(timer);
+            timer = setTimeout(function(){
+                console.log('函数防抖')
+            },3000)
+        }
+
+    </script>
+
+</body>
+
+</html>

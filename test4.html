@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title></title>
+  <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+  <style>
+   
+  </style>
+</head>
+
+<body>
+  <div id="box">
+
+    <p>hahahah</p>
+
+    <select name="" id="box">
+        <option value="bnw">宝马</option>
+        <option value="benci">奔驰</option>
+        <option value="audi">奥迪</option>
+    </select>
+
+    <button id="btn">提交选中的</button>
+    <input type="text" class="mui-input-clear" placeholder="建设银行" id="bankName">
+
+  </div>
+
+
+  <div class="two"></div>
+  <script src="./jquery-1.11.3.min.js"></script>
+    <script>
+        console.log($('#box option:selected').text())
+        $('#box').change(function(){
+            console.log($('#box option:selected').text())
+        })
+        $('#bankName').attr('disabled',true);
+  </script>
+</body>
+
+</html>

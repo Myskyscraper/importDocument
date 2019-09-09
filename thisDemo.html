@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // var out = {
+        //     function inner() {
+        //         this
+        //     }
+        // }
+        //此时函数中的this表示out对象。
+
+
+
+
+        function inner() {
+            this
+        }
+        //此时函数中的this表示全局对象window
+
+
+        new Vue({
+            data: {
+                a: 1
+            },
+            created: function () {
+                console.log('a is: ' + this.a)
+            },
+            methods: {
+                plus: function () {
+                    this.a++
+                }
+            }
+        })
+        //生命周期钩子函数created还是自定义函数plus，他们中的this都是指当前vue实例
+    </script>
+</body>
+
+</html>

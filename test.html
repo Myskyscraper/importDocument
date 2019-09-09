@@ -2,50 +2,58 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <title></title>
-    <meta name="viewport"
-        content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
-    <style>
-        .aaa {
-            display: none;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <title></title>
+  <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+  <style>
+  
+  
+  </style>
 </head>
 
 <body>
+  <!-- 防抖 -->
+  <div id="box1">防抖 频繁的触发，只有歇着才执行</div>
 
-    <div class="box">
-        盒子啊
-    </div>
+  <!-- 节流 -->
+  <div id="box2">节流 在一定时间内只执行一次</div>
 
-    <div class="aaa">
-        aaaaaaaa
-        <button type="button" id="btn" disabled="disabled">Click Me!</button>
-        <span id="num">10</span>
-    </div>
-    <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
-    <script>
-        $('.box').click(function () {
-            $('.aaa').toggle();
-            timeEnd();
-        })
-        var x = 10;
-        function timeEnd() {
-            var timer = setInterval(function () {
-                x = x - 1;
-                if (x < 1) {
-                    clearInterval(timer)
-                    $('#btn').removeAttr("disabled");
-                }
-                $('#num').html(x);
-            }, 1000)
+
+
+  1: flex
+2: 箭头函数
+3:
+4: 为啥methods是对象。而生命周期和状态是函数
+5：箭头函数
+6:
+------------------------
+1
+
+
+  <!-- <script src="./jquery-1.11.3.min.js" >  </script> -->
+  <script>
+      box1 = document.getElementById('box1');
+      box2 = document.getElementById('box2');
+      var isFlag= true;
+      box2.onclick = function(){
+        console.log(isFlag==false);
+        console.log(!isFlag)
+        if(isFlag==false){
+            console.log('程序还在执行中,你点击也没用')
+            return 
         }
-       
+        isFlag=false;
+        setTimeout(function(){
+          console.log('程序正在执行')
+          isFlag = true;
+        },5000)
+
+      }
 
 
-
-    </script>
+  
+  </script>
+  
 </body>
 
 </html>

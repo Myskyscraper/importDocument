@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        function isnull(value) {
+            if (typeof value == "undefined" || value == null || value == "") {
+                return true;
+            }
+            return false;
+        }
+
+        //console.log('000');
+        var data = [{
+                a: 1
+            },
+            {
+                b: 2
+            },
+            {
+                c: 3
+            },
+            {
+                d: 4
+            },
+            {
+                e: 5
+            }
+        ];
+
+        var dataAll = {
+            a: 1,
+            b: 2,
+            c: 3,
+            d: 4,
+            e: ""
+        }
+
+        function isnullSetVal(outval, inval) {
+            if (isnull(inval)) {
+                outval = "";
+            } else {
+                outval = inval;
+            }
+            return outval;
+        }
+
+
+       
+
+        function isnullSetValData(dataAll) {
+            for (var k in dataAll) {
+                
+                if (isnull(dataAll[k])) {
+                    key = "ssss";
+                } else {
+                    key = dataAll[k];
+                }
+
+                console.log('key', k);
+                console.log("值",dataAll[k]);
+            }
+
+            console.log(dataAll.e);
+        }
+
+        isnullSetValData(dataAll);
+       
+       
+    </script>
+</body>
+
+</html>
