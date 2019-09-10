@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    函数（function）
+    函数对象(function object)
+    本地对象(native object)
+    内置对象(build-in object)
+    宿主对象(host object)
+
+
+    <script>
+        // function foo() {
+        //     //函数声明
+        // }
+        // var foos = function () {
+        //     //函数表达式
+        // }
+
+        // var foo = new function () {
+        //     //函数对象
+        // }
+
+        //本地对象
+        Object,Function,Array,String,Boolean,Number
+        Date,RegExp,Error,EvalError,RangeError,ReferenceError,SyntaxError,TypeError,URIError;
+
+        //内置对象
+        //Global ,Math
+
+        function Foo(){
+
+        }
+
+        var foo = new Foo();
+        
+        console.log(foo.__proto__ ===Foo.prototype);
+        console.log(Foo.__proto__);
+        console.log(Foo.__proto__.__proto__);
+
+
+
+    </script>
+
+</body>
+
+</html>

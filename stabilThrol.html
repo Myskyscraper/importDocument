@@ -10,8 +10,9 @@
 
 <body>
     <div>
-        <p onclick="fdou()">函数防抖 在频繁触动时间内，有足够空闲时间 公交车</p>
+       
         <p onclick="show()">函数节流 在一定时间内，函数只跑一次 眨眼</p>
+        <p onclick="fdou()">函数防抖 在频繁触动时间内，有足够空闲时间 公交车</p>
     </div>
     <script>
         //节流
@@ -32,7 +33,6 @@
             console.log(2);
         }
 
-        
         //防抖
         var timer = false;
         function fdou(){
