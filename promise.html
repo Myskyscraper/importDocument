@@ -1,16 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
 </head>
+
 <body>
-    
+    <p>promise是什么？</p>
+    <ol>
+        <li>主要用于异步计算</li>
+        <li>可以将异步操作队列化，按照期望的顺序执行，返回符合预期的结果</li>
+        <li>可以在对象之间传递和操作promise，帮助我们处理队列</li>
+    </ol>
+
+
+    <p>promise</p>
+    <ol>
+        <li>promise是一个对象，对象和函数的区别就是对象可以保存状态，函数不可以（闭包除外）</li>
+        <li>并未剥夺函数return的能力，因此无需层层传递callback，进行回调获取数据</li>
+        <li>代码风格，容易理解，便于维护</li>
+    </ol>
+
+
     <script>
-        
-        
+        new Promise(
+            function (resolve, reject) {
+                // 一段耗时的异步操作
+                resolve('成功') // 数据处理完成,将Promise对象的状态从“未完成”变为“成功”异步操作的结果，作为参数传递出去
+                // reject('失败') // 数据处理出错,并将异步操作报出的错误，作为参数传递出去。
+            }
+        ).then(
+            (res) => {
+                console.log(res)
+            }, // 成功
+            (err) => {
+                console.log(err)
+            } // 失败
+        );
+
+        new Promise(resolve => {
+            setTimeout(() => {
+                resolve('hello')
+            }, 2000)
+        }).then(res => {
+            console.log(res)
+        });
+
+        new Promise(resolve => {
+            setTimeout(() => {
+                resolve('hello')
+            }, 2000)
+        }).then(val => {
+            console.log(val) //  参数val = 'hello'
+            return new Promise(resolve => {
+                setTimeout(() => {
+                    resolve('world')
+                }, 2000)
+            })
+        }).then(val => {
+            console.log(val) // 参数val = 'world'
+        })
     </script>
 </body>
+
 </html>

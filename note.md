@@ -35,12 +35,24 @@
             自己配置的vue集中式事件管理机制。
         src下service：
             自己配置的vue请求后台接口方法。
+            (1)与后台连接端口的配置:config，打开 index.js proxytable
+            (2)fetch 请求后台接口:vue项目utils 工具包下创建fetch.js 件;
+                src 下新建一个 api 文件夹，创建一个 js 文件
         src下util：
             存放vue开发过程中一些公共的.js方法。
+        src下store
+            index.js
+            state：存储状态（变量）
+            getters.js:对数据获取之前的再次编译，可以理解为state的计算属性。我们在组件中使用 $sotre.getters.fun()
+            mutation.js 修改状态，并且是同步的
+            actions.js  异步操作。在组件中使用是$store.dispath('')
         watch 和computed
             watch擅长处理的场景：一个数据影响多个数据 草帽海贼团 纵多成员
             computed擅长处理的场景：一个数据受多个数据影响 名字书写 （存在依赖型数据 2.依赖型数据发生改变这两个条件才改变）
         keep-alive
+
+        fetch.js:是一种xmlhttp的请求方式 返回Promise 类型
+        和axios
 
 6 工具
 
@@ -56,3 +68,6 @@ vue.js   api那设置  删除当前信息  表格校验 信息编辑 提交  表
 哈希：
 data设置 
 vuex再遍历一遍
+fetch.js 和axios的区别
+开发环境和生产环境设置
+2vuex/api-data happy

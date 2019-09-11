@@ -8,18 +8,21 @@
 </head>
 <body>
     <script>
-        var isFlag= true;
+    //    var a=null;
+    //     a.slice(0,3);
 
-        function oncene(){
-            if(isFlag==false){
-                console.log('请勿重复点击');
-                return;
-            };
-            isFlag=false;
-            setTimeout(function(){
-                isFlag =true;
-            },5000)
+    new Promise(
+        function(resolve,rejece){
+            resolve('成功');
+            //reject('失败');
         }
+    ).then(
+        (res)=>{
+            console.log(res);
+        },(err)=>{
+            console.log(err);
+        }
+    )
         
 
         

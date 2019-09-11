@@ -22,8 +22,6 @@
   </div>
 
   
-
-
   <p>&nbsp;</p>
 
   <script>
@@ -73,11 +71,11 @@
 
       if (!code || !/^\d{6}(18|19|20)?\d{2}(0[1-9]|1[012])(0[1-9]|[12]\d|3[01])\d{3}(\d|[xX])$/.test(code)) {
         row = false,
-          msg = "被保人身份证号格式错误";
+          msg = "身份证号格式错误";
           console.log(msg)
       } else if (!city[code.substr(0, 2)]) {
         row = false,
-          msg = "被保人身份证号地址编码错误";
+          msg = "身份证号地址编码错误";
           console.log(msg)
       } else {
         //18位身份证需要验证最后一位校验位  
@@ -98,7 +96,7 @@
           }
           if (parity[sum % 11] != code[17].toUpperCase()) {
             row = false,
-              msg = "被保人身份证号校验位错误";
+              msg = "身份证号校验位错误";
               console.log(msg);
           }
         }

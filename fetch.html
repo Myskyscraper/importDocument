@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+    //
+
+    <script>
+        console.log(self);
+        if (self.fetch) {
+            // 使用 fetch 框架处理
+            console.log('1');
+        } else {
+            // 使用 XMLHttpRequest 或者其他封装框架处理
+            console.log('2');
+        }
+
+
+        fetch("http://blog.parryqiu.com", {
+            headers: {
+                'Cache-Control': 'no-cache'
+            }
+        }).then(function (response) {
+            // do something...
+        })
+
+
+
+        var myHeaders = new Headers();
+        myHeaders.append("Content-Type", "text/plain");
+        myHeaders.append("Content-Length", content.length.toString());
+        myHeaders.append("X-Custom-Header", "ProcessThisImmediately");
+
+        var myInit = {
+            method: 'GET',
+            headers: myHeaders,
+            mode: 'cors',
+            cache: 'default'
+        };
+
+        fetch("http://blog.parryqiu.com", myInit)
+            .then(function (response) {
+                // do something...
+            })
+    </script>
+</body>
+
+</html>
