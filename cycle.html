@@ -14,24 +14,32 @@
     <body>
        
         <script>
-           var obj ={
-               a:1,
-               b:2,
-               c:3
-           };
-           var arr=[
-               "a","b","c","d"
-           ];
+        //    var obj ={
+        //        a:1,
+        //        b:2,
+        //        c:3
+        //    };
+           var arr=["a","b","c","d"];
 
-           for(k in obj){
-               console.log(k);
-               console.log(obj[k]);
-           }
+        //    for(k in obj){
+        //        console.log(k);
+        //        console.log(obj[k]);
+        //    }
 
-           arr.forEach(function(currentValue, index, arr){
-               console.log(currentValue);
-               console.log("标识",index);
-           })
+        //    arr.forEach(function(currentValue, index, arr){
+        //        console.log(currentValue);
+        //    })
+            var flag=false;
+           arr.forEach(function(item){
+                console.log(item);
+                if("a"==item){
+                        flag =true;
+                        return flag;
+                }
+                
+           });
+
+           
 
           
         
