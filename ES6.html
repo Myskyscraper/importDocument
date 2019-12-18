@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <ul>
+        <li>对象中的扩展运算符(...)用于取出参数对象中的所有可遍历属性，拷贝到当前对象之中</li>
+    </ul>
+    <script>
+        let obj ={a:1,b:2,c:3};
+        let objAll ={...obj,d:4};
+        console.log(JSON.stringify(objAll));
+        
+        
+    </script>
+</body>
+</html>

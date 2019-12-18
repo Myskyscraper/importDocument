@@ -26,6 +26,24 @@
 
 
     <script>
+        function test(val1,val2){
+			return new Promise(function(resolve,reject){
+				if(val1>3){
+					resolve('ok')
+				}else{
+					reject('no-ok');
+				}
+			})
+
+		}
+
+		test(2,4).then(res=>{
+			console.log(res)
+		}).catch(res=>{
+			console.log(res)
+		})
+
+
         new Promise(
             function (resolve, reject) {
                 // 一段耗时的异步操作

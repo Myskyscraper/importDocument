@@ -10,6 +10,8 @@
 
 <body>
 
+    fetch : ES6中的promise对象。Fetch是基于promise设计的
+
     //
 
     <script>
@@ -49,6 +51,10 @@
             .then(function (response) {
                 // do something...
             })
+
+        fetch(url).then(response => response.json())
+            .then(data => console.log(data))
+            .catch(e => console.log("Oops, error", e))
     </script>
 </body>
 
